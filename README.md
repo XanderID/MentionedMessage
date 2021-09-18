@@ -2,6 +2,18 @@
 
 now you can save MentionedMessage in UI
 
+Example: You Chat Hi @MulqiGaming @Friends
+
+it will be save Message later to MulqiGaming and Friends
+
+# Commands
+
+Commands For Getting all Mentioned Message:
+
+Commands | Aliases | Default
+--- | --- | ---
+`/mymessage` | `/mm` | OP
+
 # Screenshot
 
 ![Screenshot](https://github.com/MulqiGaming64/MentionedMessage/blob/6db7af686c18e22c79832e974167c1c430c6a88e/Screenshot.png)
