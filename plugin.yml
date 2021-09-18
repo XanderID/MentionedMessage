@@ -1,0 +1,6 @@
+name: MentionedMessage
+main: MulqiGaming64\MentionedMessage\MentionedMessage
+description: now you can save MentionedMessage in UI
+api: 3.0.0
+version: 1.0.0
+author: MulqiGaming64
