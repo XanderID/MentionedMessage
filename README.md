@@ -21,7 +21,7 @@ Commands | Aliases | Default
 # Feature
 - You can clear All Mentioned Message
 - Can Multiple Mention Player
-- can only mention players who have joined
+- can Mention Players offline
 - can set content format in config
 - can set custom timezone
 
