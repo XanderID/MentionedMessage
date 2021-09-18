@@ -1,0 +1,21 @@
+---
+# Timezone
+timezone: "asia/jakarta"
+
+# Auto Save Interval Message
+# Seconds
+save-interval: 180
+
+# Tag
+# {MSG} Messages
+# {YEARS} yyyy Years Message
+# {MONTH} 1-12 Month Message
+# {DATE} 1-31 Date Message
+# {HOURS} Hours Time Message
+# {MINUTES} Minutes Time Message
+# {NAME} Name Who Mentioned
+
+# Mention Message Format
+# Content
+mention-message: "§f[§a{HOURS}:{MINUTES}§r] From §a{NAME}: §f{MSG}"
+...
