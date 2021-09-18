@@ -1,0 +1,12 @@
+--- # Poggit-CI Manifest. Open the CI at https://poggit.pmmp.io/ci/MulqiGaming64/MentionedMessage
+build-by-default: true
+branches:
+- main
+projects:
+  MentionedMessage:
+    path: ""
+    icon: "icon.png"
+    libs:
+      - src: jojoe77777/FormAPI/libFormAPI
+        version: ^1.3
+...
