@@ -12,7 +12,7 @@ Commands For Getting all Mentioned Message:
 
 Commands | Aliases | Default
 --- | --- | ---
-`/mymessage` | `/mm` | OP
+`/mymessage` | `/mm` | True
 
 # Screenshot
 
