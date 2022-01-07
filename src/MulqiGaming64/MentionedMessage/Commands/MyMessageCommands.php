@@ -4,11 +4,12 @@ namespace MulqiGaming64\MentionedMessage\Commands;
 
 use MulqiGaming64\MentionedMessage\MentionedMessage;
 use pocketmine\command\Command;
+use pocketmine\player\Player;
 use pocketmine\command\CommandSender;
-use pocketmine\command\PluginCommand;
-use pocketmine\Player;
+use pocketmine\plugin\PluginOwned;
+use pocketmine\utils\TextFormat;
 
-class MyMessageCommands extends PluginCommand {
+class MyMessageCommands extends Command implements PluginOwned {
 
 	/** @var MentionedMessage $plugin */
     private $plugin;
@@ -17,25 +18,23 @@ class MyMessageCommands extends PluginCommand {
      * MyMessageCommands constructor.
      * @param MentionedMessage $plugin
      */
-    public function __construct(string $cmd, MentionedMessage $plugin) {
-		parent::__construct($cmd, $plugin);
-		$this->setAliases(["mm"]);
-		$this->setDescription("My Message");
-        $this->plugin = $plugin;
+    public function __construct(MentionedMessage $plugin) {
+		$this->plugin = $plugin;
+		parent::__construct("mymessage", "My Mentioned Message", "/mm", ["mm"]);
+        $this->setPermission("mentionedmessage.use");
     }
 
-    /**
-     * @param CommandSender $sender
-     * @param string $commandLabel
-     * @param array $args
-     * @return bool
-     */
-    public function execute(CommandSender $sender, string $commandLabel, array $args): bool {
+    public function execute(CommandSender $sender, string $commandLabel, array $args): bool{
     	if(!$sender instanceof Player){
-        	$sender->sendMessage("Use Commands In Game Please");
-        	return false;
-        }
-    	$this->plugin->myMessage($sender);
-		return true;
+    		$sender->sendMessage("Use Commands in Game");
+    		return false;
+    	}
+    	if (!$this->testPermission($sender)) return false;
+    	$this->getOwningPlugin()->myMessage($sender);
+        return true;
+	}
+	
+	public function getOwningPlugin(): MentionedMessage{
+        return $this->plugin;
     }
 }
