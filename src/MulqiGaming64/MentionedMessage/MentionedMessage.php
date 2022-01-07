@@ -2,10 +2,10 @@
 
 namespace MulqiGaming64\MentionedMessage;
 
+use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\Server;
-use pocketmine\Player;
 use pocketmine\utils\TextFormat as C;
 use pocketmine\utils\Config;
 
@@ -14,7 +14,7 @@ use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 
 use MulqiGaming64\MentionedMessage\Commands\MyMessageCommands;
-use jojoe77777\FormAPI\SimpleForm;
+use Vecnavium\FormsUI\SimpleForm;
 
 class MentionedMessage extends PluginBase implements Listener{
     
@@ -25,15 +25,10 @@ class MentionedMessage extends PluginBase implements Listener{
     
     public function onEnable(): void{
     	$this->saveDefaultConfig();
-    	if (!class_exists(SimpleForm::class)) {
-			$this->getLogger()->error("FormAPI virion not found. Please download MentionedMessage from Poggit-CI");
-            $this->getServer()->getPluginManager()->disablePlugin($this);
-            return;
-        }
     	$this->message = new Config($this->getDataFolder() . "message.yml", Config::YAML, array());
     	$this->messageList = $this->message->getAll();
-    	$this->getScheduler()->scheduleDelayedRepeatingTask(new ClosureTask(
-        	function(int $currentTick): void{
+    	$this->getScheduler()->scheduleRepeatingTask(new ClosureTask(
+        	function(){
             	$this->message->setAll($this->messageList);
 				$this->message->save();
             }
@@ -44,7 +39,7 @@ class MentionedMessage extends PluginBase implements Listener{
         } else {
         	$this->setTimezone($timezone);
         }
-        $this->getServer()->getCommandMap()->register("MentionedMessage", new MyMessageCommands("mymessage", $this));
+        $this->getServer()->getCommandMap()->register("MentionedMessage", new MyMessageCommands($this));
         $this->getServer()->getPluginManager()->registerEvents($this, $this);
     }
     
@@ -120,7 +115,7 @@ class MentionedMessage extends PluginBase implements Listener{
         $form->setContent($this->getMMessage($player));
         $form->addButton(C::BOLD . C::RED . "Close", 0, "textures/blocks/barrier");
         $form->addButton(C::BOLD . C::RED . "Clear All", 0, "textures/ui/icon_trash");
-        $form->sendToPlayer($player);
+        $player->sendForm($form);
         return true;
 	}
 	
