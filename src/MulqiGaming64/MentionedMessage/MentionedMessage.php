@@ -27,7 +27,7 @@ class MentionedMessage extends PluginBase implements Listener{
     	$this->saveDefaultConfig();
     	$this->message = new Config($this->getDataFolder() . "message.yml", Config::YAML, array());
     	$this->messageList = $this->message->getAll();
-    	$this->getScheduler()->scheduleRepeatingTask(new ClosureTask(
+    	$this->getScheduler()->scheduleDelayedRepeatingTask(new ClosureTask(
         	function(){
             	$this->message->setAll($this->messageList);
 				$this->message->save();
