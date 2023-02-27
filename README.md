@@ -16,7 +16,7 @@ Commands | Aliases | Default
 
 # Screenshot
 
-![Screenshot](https://github.com/MulqiGaming64/MentionedMessage/blob/6db7af686c18e22c79832e974167c1c430c6a88e/Screenshot.png)
+![Screenshot](https://github.com/XanderID/MentionedMessage/blob/6db7af686c18e22c79832e974167c1c430c6a88e/Screenshot.png)
 
 # Feature
 - You can clear All Mentioned Message
@@ -54,5 +54,5 @@ mention-message: "§f[§a{HOURS}:{MINUTES}§r] From §a{NAME}: §f{MSG}"
 
 # Additional Notes
 
-- If you find bugs or want to give suggestions, please visit [here](https://github.com/MulqiGaming64/MentionedMessage/issues)
+- If you find bugs or want to give suggestions, please visit [here](https://github.com/XanderID/MentionedMessage/issues)
 - Icons By [icons8.com](https://icons8.com)

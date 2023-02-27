@@ -1,9 +1,9 @@
 name: MentionedMessage
-main: MulqiGaming64\MentionedMessage\MentionedMessage
+main: XanderID\MentionedMessage\MentionedMessage
 description: now you can save MentionedMessage in UI
 api: 4.0.0
 version: 1.0.1
-author: MulqiGaming64
+author: XanderID
 
 permissions:
   mentionedmessage.use:

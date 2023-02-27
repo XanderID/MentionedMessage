@@ -1,6 +1,6 @@
 <?php
 
-namespace MulqiGaming64\MentionedMessage;
+namespace XanderID\MentionedMessage;
 
 use pocketmine\player\Player;
 use pocketmine\plugin\PluginBase;
@@ -13,7 +13,7 @@ use pocketmine\scheduler\ClosureTask;
 use pocketmine\event\player\PlayerChatEvent;
 use pocketmine\event\player\PlayerJoinEvent;
 
-use MulqiGaming64\MentionedMessage\Commands\MyMessageCommands;
+use XanderID\MentionedMessage\Commands\MyMessageCommands;
 use Vecnavium\FormsUI\SimpleForm;
 
 class MentionedMessage extends PluginBase implements Listener{
